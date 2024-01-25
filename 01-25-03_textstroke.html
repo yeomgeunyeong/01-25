@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+
+        body{
+            /* font-family: 'Rubik Mono One', monospace; */
+            font-family: 'Rubik', sans-serif;
+            /* font-family: 'Bungee', sans-serif; */
+            /* font-family: 'Climate Crisis', sans-serif; */
+            /* font-family: 'Oi', serif; */
+            /* font-family: 'Rammetto One', sans-serif; */
+            font-weight: 900;
+            font-size: 10vw;
+        }
+
+        .stroke_1{
+            -webkit-text-stroke: 1px red;
+        }
+
+        .stroke_2{
+            -webkit-text-stroke-color: yellow;
+            -webkit-text-stroke-width: 5px;
+        }
+
+        .stroke_3{
+            -webkit-text-stroke: 3px green;
+        }
+
+        .Shadow_1{
+            /* text-shadow: -1px 0 red, 0px 1px red, 1px 0px red, 0px -1px red; */
+            text-shadow: -10px 0 20px red, 10px 0 blue;
+        }
+
+        .Shadow_2{
+            text-shadow: 50px 50px 5px gray;
+        }
+
+        .Shadow_3{
+            text-shadow: 50px 50px 5px rgba(255, 0, 255, .3);
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div>Default Text</div>
+
+        <div class="stroke_1">Text Stroke 1</div>
+        <div class="stroke_2">Text Stroke 2</div>
+        <div class="stroke_3">Text Stroke 3</div>
+    </div><!-- row -->
+    <div class="row">
+        <div>Default Text</div>
+
+        <div class="Shadow_1">Text Shadow 1</div>
+        <div class="Shadow_2">Text Shadow 2</div>
+        <div class="Shadow_3">Text Shadow 3</div>
+    </div><!-- row -->
+</body>
+</html>

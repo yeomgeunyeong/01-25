@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKE</title>
+
+    <style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        body{
+            /* font-family: 'Cabin', sans-serif; */
+            font-family: 'Gruppo', sans-serif;
+            /* font-family: 'Righteous', sans-serif; */
+            /* font-family: 'Sedgwick Ave Display', cursive; */
+            /* font-family: 'Zeyada', cursive; */
+            background-color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{}
+
+        .card{
+            width: 320px;
+            height: 450px;
+            overflow: hidden;
+            background-color: #232323;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .card::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #e26829;
+            top: 0;
+            left: 0;
+            clip-path: circle(150px at 80% 20%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover::before{
+            clip-path: circle(300px at 80% -20%);
+        }
+
+        .card::after{
+            content: "NIKE";
+            position: absolute;
+            top: 30%;
+            left: -15px;
+            font-size: 12em;
+            font-weight: 800;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.041);
+            font-family: 'Zeyada', cursive;
+        }
+
+        .imgBox{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            z-index: 10000;
+            height: 220px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .card:hover/* :hover */ .imgBox{
+            top: 0;
+            transform: translateY(40px);
+        }
+
+        .imgBox img{
+            width: 270px;
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%) rotate(-25deg);
+        }
+
+        .contentBox{
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            bottom: 0;
+            transition: all 1s;
+            z-index: 10;
+        }
+
+        .card:hover .contentBox{
+            height: 170px;
+        }
+
+        .contentBox h2{
+            font-weight: 600;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .contentBox .size, 
+        .contentBox .color{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 20px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .card:hover .contentBox .size{
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.5s;
+        }
+
+        .card:hover .contentBox .color{
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.7s;
+        }
+
+        .contentBox .size h3, 
+        .contentBox .color h3{
+            color: white;
+            font-weight: 300;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+
+        .contentBox .size span{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            background-color: white;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contentBox .color span{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        
+        .contentBox .color span:nth-child(2){
+            background-color: #e26829;
+        }
+        .contentBox .color span:nth-child(3){
+            background-color: rgb(32, 89, 245);
+        }
+        .contentBox .color span:nth-child(4){
+            background-color: rgb(26, 83, 26);
+        }
+
+        .contentBox .color span:nth-child(5){
+            background-color: rgb(177, 22, 22);
+        }
+
+        /* .contentBox .color span:nth-of-type(1){} 
+        color 태그의 형제들을 가져오는 것이기 때문에 
+        nth-child로 입력시 h3태그도 자식이기 때문에 읽어온다.
+        span 태그만 읽어오기 위해서는 nth-of-type으로 입력해야 함*/
+
+        .contentBox .size span:hover{
+            background-color: black;
+            color: white;
+        }
+        .contentBox .color span:hover{
+            border: 2px solid white;
+        }
+
+        .contentBox a{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #111;  
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s;
+        }
+
+        .card:hover .contentBox a{
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.8s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgBox">
+                <img src="img/111.png" alt="nike">
+            </div><!-- imgBox -->
+
+            <div class="contentBox">
+                <h2>Nike shoes</h2>
+                <div class="size">
+                    <h3>Size :</h3>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div><!-- size -->
+
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <a href="#">Buy Now</a>
+            </div><!-- contentBox -->
+        </div><!-- card -->
+    </div><!-- container -->
+</body>
+</html>

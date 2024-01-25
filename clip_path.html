@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Path</title>
+
+    <style type="text/css">
+        .img{
+            background: url("img/sl1.jpg");
+            height: 300px;
+            width: 300px;
+            background-size: cover;
+            margin: 100px auto;
+            /* clip-path: circle(50%); */
+            /* clip-path: ellipse(50px 150px); */
+            /* clip-path: ellipse(140px 40px at 10% 20%); */
+            /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
+            /* clip-path: path("M 0 200 L 0, 75 A 5, 5 0, 0, 1 150, 75 L 200 200 Z"); */
+            /* clip-path: rect(5px 5px 160px 145px round 20%); */
+            clip-path: xywh();
+        }
+
+    </style>
+</head>
+<body>
+    <div class="img">
+
+    </div><!-- img -->
+</body>
+</html>

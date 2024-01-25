@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half Slide</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        :root{
+            --dark:rgb(20,20,20);
+            -yellow:rgb(253,216,53);
+            -blue:rgb(0, 109, 234);
+
+            --c1:rgb(38,70,80);
+            --c2:rgb(45,157,143);
+
+            --left-color:var(--c1);
+            --right-color:var(--c2);
+        }
+
+
+        body{
+            background-color: var(--dark);
+            font-family: 'Rammetto One', sans-serif;         
+        }
+
+        .slide{
+            height: 100vh;
+            overflow: hidden;
+            width: 100%;
+            position: absolute;
+            display: grid;
+            place-items: center;
+        }
+
+        .slide .title{
+            font-size: 6vw;
+            margin: 0 10vw;
+            width: 80vw;
+        }
+
+        span{
+            font-family: 'Zeyada', cursive;
+            text-transform: uppercase;
+            font-size: 10vw;
+            /* font-size: 1.3em; */
+            line-height: 0.8em;
+        }
+
+        .left_slide .title{
+            color: white;
+        }
+
+        .left_slide .title span{
+            color: var(--right-color);
+        }
+
+        .right_slide .title span{
+            color: var(--left-color);
+        }
+
+        .left_slide{
+            background-color: var(--left-color);
+            width: 60%;
+            z-index: 2;
+        }
+
+        .left_slide .title{
+            color: white;
+        }
+        
+        .right_slide{
+            background-color: var(--right-color);
+        }
+
+        .right_slide .title{
+            color: var(--dark);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="left_slide slide">
+        <h2 class="title">
+            Sometimes a Simple header is 
+            <span>better</span>
+        </h2><!-- title -->
+    </div><!-- left_slide slide -->
+
+    <div class="right_slide slide">
+        <h2 class="title">
+            Sometimes a Simple header is 
+            <span>better</span>
+        </h2><!-- title -->
+    </div><!-- right_slide slide -->
+
+
+
+    <script lang="java">
+
+        const left=document.querySelector(".left_slide");
+        const handleMove=e=>{
+            // left.style.width=(e.clientX / window.innerWidth *100)+"%";
+            var x=(e.clientX / window.innerWidth *100)+"%";
+            console.log(x);
+            left.style.width = x;
+        }
+        // const handleMove = function(){}
+
+        document.onmousemove=e=>handleMove(e);
+
+    </script>
+</body>
+</html>

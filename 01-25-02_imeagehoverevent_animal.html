@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        body{
+            /* font-family: 'Rubik Mono One', monospace; */
+            /* font-family: 'Rubik', sans-serif; */
+            /* font-family: 'Bungee', sans-serif; */
+            font-family: 'Climate Crisis', sans-serif;
+            /* font-family: 'Oi', serif; */
+            /* font-family: 'Rammetto One', sans-serif; */
+            font-size: 16px;
+            height: 100vh;
+            background-image: linear-gradient(to top, #def9f3 0%, #fff 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 100%;
+            padding: 0 20px;
+            display: flex;
+        }
+
+        .slide{
+            height: 80vh;
+            margin: 10px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            flex: 1;
+            filter: blur(5px);
+            transition: all 0.7s ease-in-out;
+            border-radius: 20px;
+        }
+
+        .slide.slide1{
+            background-image: url("img/KakaoTalk_20240125_105635752_04.jpg");
+        }
+        .slide.slide2{
+            background-image: url("img/KakaoTalk_20240125_105635752.jpg");
+        }
+        .slide.slide3{
+            background-image: url("img/KakaoTalk_20240125_105635752_01.jpg");
+        }
+        .slide.slide4{
+            background-image: url("img/KakaoTalk_20240125_113427175_01.jpg");
+        }
+        .slide.slide5{
+            background-image: url("img/KakaoTalk_20240125_105635752_02.jpg");
+        }
+
+        .slide h3{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 6vw;
+            background-color: #e3fdf5;
+            background-image: linear-gradient(-225deg, #7aedfc 0%, #ffb6f0 100%);
+            -webkit-text-fill-color: transparent;
+            /* -webkit-text-fill-color: red;
+            -webkit-text-fill-color: inherit;
+            -webkit-text-fill-color: rgba(0, 0, 0, .5); */
+            background-clip: text;
+            /* -webkit-text-stroke: black; */
+            opacity: 0;
+            
+        }
+
+        .slide.active{
+            flex: 10;
+            filter: blur(0px);
+        }
+
+        .slide.active h3{
+            opacity: 1;
+            transition: all 0.3s ease-in 0.4s;
+        }
+
+    </style>
+
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+
+        window.onload=function(){
+            
+            function slidesPlu(activeSlide=1){
+    
+                const slides=document.querySelectorAll(".slide");
+                // console.log(slides);
+                slides[activeSlide].classList.add("active");
+
+                for(const slide of slides){
+                    slide.addEventListener("click", ()=>{
+                        clearActive();
+                        slide.classList.add("active");
+                    })
+                    // slide.addEventListener("click", function(){})
+                }//for
+                
+                function clearActive(){
+                    slides.forEach( (slide)=>{
+                        slide.classList.remove("active");
+                    })
+                }//clearActive
+
+            }//slidesPlu
+    
+            slidesPlu();
+
+        }//
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="slide slide1">
+            <h3>LION</h3>
+        </div><!-- slide slide1 -->
+
+        <div class="slide slide2">
+            <h3>TIGER</h3>
+        </div><!-- slide slide1 -->
+
+        <div class="slide slide3">
+            <h3>FOX</h3>
+        </div><!-- slide slide1 -->
+
+        <div class="slide slide4">
+            <h3>PUMA</h3>
+        </div><!-- slide slide1 -->
+
+        <div class="slide slide5">
+            <h3>LEOPARD</h3>
+        </div><!-- slide slide1 -->
+
+    </div><!-- container -->
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imeage Hover Event</title>
+    <script src="js/jquery-3.7.1.js"></script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+        
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        body{
+            /* font-family: 'Rubik Mono One', monospace; */
+            /* font-family: 'Rubik', sans-serif; */
+            /* font-family: 'Bungee', sans-serif; */
+            /* font-family: 'Climate Crisis', sans-serif; */
+            /* font-family: 'Oi', serif; */
+            font-family: 'Rammetto One', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: white;
+            background-color: #222;
+        }
+
+        .section_main{
+            max-width: 1140px;
+            width: calc(100% - 40px);
+            margin: 0 auto;
+        }
+
+        .section_row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section_col{
+            max-width: 50%;
+            width: 100%;
+            opacity: 0.1;
+            transition: all 0.3s;
+        }
+        
+        .section_col:hover {
+            opacity: 1;
+        }
+
+        .section{
+            cursor: pointer;
+            overflow: hidden;
+            width: 100%;
+            padding: 10px;
+        }
+        
+        .section_in{
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .section_in img{
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: all 0.3s;
+        }
+
+        .section_col:hover .section_in img{
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .hover_txt{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 100;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+
+        .hover_txt h2{
+            font-size: 7vw;
+            color: white;
+            font-weight: 800;
+            line-height: 1;
+            opacity: 0;
+            transform: scale(0.8);
+            /* transition: all 0.3s ease-in-out; */
+            transition: opacity 0.2s ease, transform 0.3s linear;
+        }
+
+        .section_col:hover + .hover_txt h2{
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media screen and (max-width:768px) {
+            .section_col{
+                max-width: 100%;
+            }
+
+            .hover_txt h2{
+                font-size: 12vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="section_main">
+        <div class="section_row">
+
+            <div class="section_col">
+                    <div class="section">
+                        <div class="section_in">
+                            <img src="img/sl1.jpg" alt="sl1">
+                        </div><!-- section_in -->
+                    </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Male Goofy Face</h2>
+            </div><!-- hover_txt -->
+
+            <div class="section_col">
+                <div class="section">
+                    <div class="section_in">
+                        <img src="img/sl2.jpg" alt="sl2">
+                    </div><!-- section_in -->
+                </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Toy Pig</h2>
+            </div><!-- hover_txt -->
+
+            <div class="section_col">
+                <div class="section">
+                    <div class="section_in">
+                        <img src="img/sl3.jpg" alt="sl3">
+                    </div><!-- section_in -->
+                </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Shy Portrait</h2>
+            </div><!-- hover_txt -->
+
+            <div class="section_col">
+                <div class="section">
+                    <div class="section_in">
+                        <img src="img/sl4.jpg" alt="sl4">
+                    </div><!-- section_in -->
+                </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Skateboard Face</h2>
+            </div><!-- hover_txt -->
+
+            <div class="section_col">
+                <div class="section">
+                    <div class="section_in">
+                        <img src="img/sl5.jpg" alt="sl5">
+                    </div><!-- section_in -->
+                </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Mirror Reflection</h2>
+            </div><!-- hover_txt -->
+
+            <div class="section_col">
+                <div class="section">
+                    <div class="section_in">
+                        <img src="img/sl6.jpg" alt="sl6">
+                    </div><!-- section_in -->
+                </div><!-- section -->
+            </div><!-- section_col -->
+            <div class="hover_txt">
+                <h2>Funny Bunny</h2>
+            </div><!-- hover_txt -->
+                    
+        </div><!-- section_row -->
+    </div><!-- section_main -->
+</body>
+</html>
