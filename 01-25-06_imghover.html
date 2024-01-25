@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a{color: inherit; text-decoration: none;}
+        body{
+            background-color: #222;
+            text-align: center;
+            color: white;
+        }
+
+        .snap{
+            max-width: 300px;
+            min-width: 230px;
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+            font-size: 15px;
+            margin: 100px 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        .snap span{
+            display: block;
+            width: 100%;
+            height: 230px;
+            background-position: center center;
+            background-size: cover;
+            text-indent: -9999px;
+        }
+        .snap span.img1{background-image: url("img/000.jpg");}
+        .snap span.img2{background-image: url("img/001.jpg");}
+        .snap span.img3{background-image: url("img/002.jpg");}
+
+
+
+        .snap *, 
+        .snap *::before, 
+        .snap *::after{
+            transition: all 0.5s ease;
+        }
+
+        .snap::before, 
+        .snap::after{
+            content: "";
+            background-color: #b81212;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;   
+            opacity: 0.4;
+            transition: all 0.3s ease-in-out;
+            z-index: 7;
+        }
+
+        .snap::before{
+            transform: skew(30deg) translateX(80%);
+        }
+
+        .snap::after{
+            transform: skew(-30deg) translateX(70%);
+        }
+
+
+        .snap figcaption{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 20px 20px 40%;
+            z-index: 9;
+            color: white;
+        }
+
+        .snap figcaption::before, 
+        .snap figcaption::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #b81212;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .7);
+            opacity: 0.5;
+            z-index: 8;
+        }
+
+        .snap figcaption::before{
+            transform: skew(30deg) translateX(100%);
+        }
+
+        .snap figcaption::after{
+            transform: skew(-30deg) translateX(90%);
+        }
+
+        .snap figcaption h3, 
+        .snap figcaption p{
+            opacity: 0;
+            transform: translateY(100%);
+            color: white;
+            position: relative;
+            z-index: 9;
+        }
+
+        .snap figcaption h3{
+            font-size: 30px;
+        }
+
+        .snap figcaption p{
+            font-size: 14px;
+        }
+
+        .snap a{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;   
+            z-index: 10;
+        }
+
+        .snap:hover h3,
+        .snap:hover p{
+            opacity: 0.9;
+            transform: translateY(0%);
+        }
+
+        .snap:hover::before{
+            transform: skew(30deg) translateX(30%);
+            transition-delay: 0.05s;
+        }
+
+        .snap:hover::after{
+            transform: skew(-30deg) translateX(20%);
+        }
+
+
+        .snap:hover figcaption::before{
+            transform: skew(30deg) translateX(50%);
+            transition-delay: 0.15s;
+        }
+
+        .snap:hover figcaption::after{
+            transform: skew(-30deg) translateX(40%);
+            transition-delay: 0.1s;
+        }
+
+
+    </style>
+</head>
+<body>
+    <figure class="snap1 snap">
+        <span href="" class="img1">1</span>
+        <figcaption>
+            <h3>Samuel Serif</h3>
+            <p>The only skills i have the patience to learn are those that have no real application in life</p>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
+
+    <figure class="snap2 snap">
+        <span href="" class="img2">1</span>
+        <figcaption>
+            <h3>Fletch Skinner</h3>
+            <p>The only skills i have the patience to learn are those that have no real application in life</p>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
+
+    <figure class="snap3 snap">
+        <span href="" class="img3">1</span>
+        <figcaption>
+            <h3>Abraham Pigeon</h3>
+            <p>The only skills i have the patience to learn are those that have no real application in life</p>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
+</body>
+</html>
