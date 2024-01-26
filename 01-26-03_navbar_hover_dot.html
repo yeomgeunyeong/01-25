@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a{color: inherit; text-decoration: none;}
+
+        html, body{
+            height: 100%;
+            /* height: 100vh; */
+            overflow-y: hidden;
+        }
+        
+        body{
+            background-color: #222;
+            font-family: 'Gruppo', sans-serif;
+            color: white;
+        }
+
+        .nav{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 350px;
+            margin: 0 auto;
+            transform: translateY(-50%);
+        }
+
+        .nav a{
+            position: relative;
+            width: calc(100% / 3);
+            text-align: center;
+            padding: 10px 20px ;
+            font-weight: bold;
+            color: #888;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .nav a:hover{
+            color: white;
+        }
+
+        .nav a::before, .nav a::after{
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.5s ease;
+        }
+
+        .nav a:hover::before, .nav a:hover::after{
+            transform: scale(1);
+        }
+
+        .nav a::before{
+            width: 8px;
+            height: 8px;
+            top: 0;
+            left: 10px;
+        }
+
+        .nav a::after{
+            width: 6px;
+            height: 6px;
+            top: 5px;
+            left: 20px;
+        }
+
+        .nav a:nth-child(1)::before{background-color: pink;}
+        .nav a:nth-child(1)::after{background-color: cornflowerblue;}
+
+        .nav a:nth-child(2)::before{background-color: rgb(253, 253, 228);}
+        .nav a:nth-child(2)::after{background-color: orangered;}
+
+        .nav a:nth-child(3)::before{background-color: rgb(230, 199, 28);}
+        .nav a:nth-child(3)::after{background-color: rgb(42, 134, 219);}
+
+
+        .nav a:nth-child(1):hover ~ #indicator{
+            background-image: linear-gradient(to right, pink, cornflowerblue);
+        }
+        .nav a:nth-child(2):hover ~ #indicator{
+            left: 31.5%;
+            background-image: linear-gradient(to right, rgb(253, 253, 228), orangered);
+        }
+        .nav a:nth-child(3):hover ~ #indicator{
+            left: 64%;
+            background-image: linear-gradient(to right, rgb(230, 199, 28), rgb(42, 134, 219));
+        }
+
+
+        #indicator{
+            position: absolute;
+            left: 5%;
+            bottom: -8px;
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #you{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+            background-color: red;
+            padding: 10px;
+            width: 160px;
+            border-radius: 5px;
+            bottom: -200px;
+            font-weight: bold;
+            animation: show 2s ease-in-out 3s forwards;
+            transition: all 0.5 ease-in-out;
+        }
+        
+        @keyframes show {
+            0%{bottom: -200px;}
+            100%{bottom: 50px;}
+        }
+        
+        #you:hover{
+            background-color: black;
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#">HOME</a>
+        <a href="#">CODING</a>
+        <a href="#">GUITAR</a>
+        <div id="indicator"></div>
+    </nav><!-- nav -->
+
+    <a href="#" id="you">Watch on YouTube</a>
+</body>
+</html>

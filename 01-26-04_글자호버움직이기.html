@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 호버 움직이기</title>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz@1,5..1200&family=Roboto+Slab:wght@300&display=swap');
+            /* font-family: 'Cabin', sans-serif; */
+            /* font-family: 'Gruppo', sans-serif; */
+            /* font-family: 'Righteous', sans-serif; */
+            /* font-family: 'Sedgwick Ave Display', cursive; */
+            /* font-family: 'Zeyada', cursive; */
+
+            /* font-family: 'Playfair', serif; */
+            /* font-family: 'Roboto Slab', serif; */
+
+            *{margin: 0;padding: 0;box-sizing: border-box;}
+            a{color: inherit; text-decoration: none;}
+
+            body{
+                background-color: #333;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav_link{
+                font-size: 5rem;
+                color: white;
+                font-style: italic;
+                display: grid;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .nav_link_txt{
+                grid-area: 1/1;
+                transition: all 0.5s ease-in-out;
+                transform-origin: 50% 50% 0.4em;
+            }
+
+            .nav_link_txt:nth-child(1){
+                /* font-family: 'Playfair', serif; */
+                font-family: 'Roboto Slab', serif;
+                /* font-family: 'Righteous', sans-serif;  */
+                font-weight: 800;
+            }
+            
+            .nav_link_txt:nth-child(2){
+                font-family: 'Sedgwick Ave Display', cursive;
+                opacity: 0;
+                transform: rotate3d(1, 0, 0, 90deg);
+                /* font-weight: 500; */
+            }
+
+            .nav_link:hover .nav_link_txt:nth-child(1){
+                transform: rotate3d(1, 0, 0, -90deg);
+                opacity: 0;
+            }
+
+            .nav_link:hover .nav_link_txt:nth-child(2){
+                opacity: 1;
+                transform: translateX(3rem) rotate3d(0, 0, 0, 90deg);
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#" class="nav_link">
+            <span class="nav_link_txt">HOME</span>
+            <span class="nav_link_txt">HOME</span>
+        </a>
+
+        <a href="#" class="nav_link">
+            <span class="nav_link_txt">About</span>
+            <span class="nav_link_txt">About</span>
+        </a>
+
+        <a href="#" class="nav_link">
+            <span class="nav_link_txt">Contact</span>
+            <span class="nav_link_txt">Contact</span>
+        </a>
+    </nav>
+
+    <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+    <script lang="java">
+        Splitting();
+    </script>
+</body>
+</html>

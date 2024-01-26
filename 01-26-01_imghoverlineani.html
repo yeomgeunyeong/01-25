@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 호버 라인 애니</title>
+
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+            /* font-family: 'Cabin', sans-serif; */
+            /* font-family: 'Gruppo', sans-serif; */
+            /* font-family: 'Righteous', sans-serif; */
+            /* font-family: 'Sedgwick Ave Display', cursive; */
+            /* font-family: 'Zeyada', cursive; */
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+
+        body{
+            background-color: #222;
+            /* font-family: 'Sedgwick Ave Display', cursive; */
+            font-family: 'Gruppo', sans-serif;
+        }
+
+        img{
+            max-width: 100%;
+            object-fit:cover;
+        }
+
+        .container{
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            margin: 200px auto;
+        }
+
+        .snap{
+            max-width: 300px;
+            height: 280px;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            font-size: 16px;
+            color: white;
+            position: relative;
+        }
+
+        .snap img{
+            display: block;
+            width: 300px;
+            height: 280px;
+            opacity: 0.9;
+        }
+
+        .snap:hover img{
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+
+        .snap .title{
+            position: absolute;
+            top: 60%;
+            left: 8%;
+            padding: 5px 10px 10px;
+        }
+
+        .snap .title::before, 
+        .snap .title::after{
+            content: "";
+            width: 400px;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+        }
+
+        .snap .title::before{
+            top: 0;
+            left: 10px;
+            transform: translateX(100%);
+            transition-delay: 0.3s;
+        }
+
+        .snap .title::after{
+            bottom: 0;
+            right: 10px;
+            transform: translateX(-100%);
+            transition-delay: 0.5s;
+        }
+
+        .snap:hover .title::before, 
+        .snap:hover .title::after{
+            transform: translateX(0);
+        }
+
+        .snap *,
+        .snap *::before,
+        .snap *::after{
+            transition: all 0.5s ease;
+        }
+
+
+        .snap .title div::before, 
+        .snap .title div::after{
+            content: "";
+            width: 2px;
+            height: 300px;
+            background-color: white;
+            position: absolute;
+        }
+
+        .snap .title div::before{
+            right: 0;
+            top: 10px;
+            transform: translateY(100%);
+            transition-delay: 0.1s;
+        }
+        .snap .title div::after{
+            bottom: 10px;
+            left: 0;
+            transform: translateY(-100%);
+            transition-delay: 0.2s;
+        }
+
+        .snap:hover .title div::before, 
+        .snap:hover .title div::after{
+            transform: translateY(0);
+        }
+        
+
+        .snap .title h2, 
+        .snap .title h4{
+            text-transform: uppercase;
+        }
+
+        .snap .title h2{
+            /* font-weight: 400; */
+        }
+        .snap .title h4{
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+        }
+
+        .snap figcaption{
+            position: absolute;
+            left: 25px;
+            bottom: 50%;
+            font-size: 0.9em;
+            padding: 5px 40px 5px 10px;
+            letter-spacing: 1.5px;
+            text-align: left;
+            font-weight: 500;
+            opacity: 0;
+        }
+
+        .snap:hover figcaption{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <figure class="snap snap1">
+            <img src="img/111.jpg" alt="111">
+            <div class="title">
+                <div>
+                    <h2>penny</h2>
+                    <h4>tool</h4>
+                </div>
+            </div><!-- title -->
+            <figcaption>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel ea a ducimus obcaecati,
+                exercitationem ratione inventore eveniet,
+            </figcaption>
+        </figure><!-- snap snap1 -->
+
+        <figure class="snap snap2">
+            <img src="img/112.jpg" alt="112">
+            <div class="title">
+                <div>
+                    <h2>ingredia</h2>
+                    <h4>nutrisha</h4>
+                </div>
+            </div><!-- title -->
+            <figcaption>
+                Consequuntur inventore, quo facere suntaliquam obcaecati nesciunt rem ex, ullam in, 
+                commodi laborum perferendis.
+            </figcaption>
+        </figure><!-- snap snap2 -->
+
+        <figure class="snap snap3">
+            <img src="img/113.jpg" alt="113">
+            <div class="title">
+                <div>
+                    <h2>hans</h2>
+                    <h4>down</h4>
+                </div>
+            </div><!-- title -->
+            <figcaption>
+                Lorem ipsum dolor sit amet consectetur elit. odio quam nisi facilis molestias velit deleniti
+                pariatur molestiae aliquam quod.
+            </figcaption>
+        </figure><!-- snap snap3 -->
+    </div><!-- container -->
+</body>
+
+</html>

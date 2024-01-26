@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 호버 위 아래 애니</title>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Gruppo&family=Righteous&family=Sedgwick+Ave+Display&family=Zeyada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Mono+One&family=Rubik:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Climate+Crisis&family=Oi&family=Rammetto+One&display=swap');
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+
+        body{
+            background-color: #222;
+            /* font-family: 'Sedgwick Ave Display', cursive; */
+            font-family: 'Zeyada', cursive;
+            /* font-family: 'Gruppo', sans-serif; */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .snap{
+            width: 300px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snap img{
+            display: block;
+            width: 100%; 
+            height: 250px;
+            object-fit: cover;
+        }
+
+
+        .snap .desc{
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .snap .desc h3, 
+        .snap .desc h5{
+            opacity: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .snap .desc h3{
+            text-transform: uppercase;
+            transform: translateY(-200%);
+            transition: all 0.3s ease;
+            transition-delay: 0.2s;
+            font-size: 30px;    
+        }
+
+        .snap .desc h5{
+            font-style: italic;
+            font-weight: normal;
+            color: #444;
+            transform: translateY(200%);
+            transition: all 0.3s ease;
+            transition-delay: 0.3s;
+            font-size: 35px;
+        }
+
+        .snap:hover .desc h3, .snap:hover .desc h5{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+        .snap a{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .snap:hover a{
+            background-color: rgba(255, 255, 255, 0.4);
+            /* filter: invert(); */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="snap snap1">
+            <img src="img/222.jpg" alt="">
+
+            <div class="desc">
+                <h3>Benjamin Evalent</h3>
+                <h5>Design</h5>
+            </div><!-- desc -->
+            <a href="#"></a>    
+        </div><!-- snap snap1 -->
+
+        <div class="snap snap2">
+            <img src="img/223.jpg" alt="">
+
+            <div class="desc">
+                <h3>Benjamin Evalent</h3>
+                <h5>Design</h5>
+            </div><!-- desc -->
+            <a href="#"></a>
+        </div><!-- snap snap2 -->
+
+        <div class="snap snap3">
+            <img src="img/224.jpg" alt="">
+
+            <div class="desc">
+                <h3>Benjamin Evalent</h3>
+                <h5>Design</h5>
+            </div><!-- desc -->
+            <a href="#"></a>
+        </div><!-- snap snap3 -->
+    </div><!-- container -->
+</body>
+</html>

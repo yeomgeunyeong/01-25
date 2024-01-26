@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotate</title>
+
+    <style type="text/css">
+        *{margin: 0;padding: 0;/* box-sizing: border-box */;}
+
+        body{perspective: 1000px;}
+
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        
+        .rotated{
+            background-color: pink;
+            /* transform: rotate3d(0, 1, 0, 60deg); */
+            /* transform: rotate3d(1, 2, -1, 190deg); */
+            transform: rotate3d(0);
+            /* transform: rotate3d(1, 1, 1, 45deg); */
+            transition: all 1.5s cubic-bezier(0.3, 0.75, 0.565, 1);
+        }
+
+        .rotated:hover{
+            transform: rotate3d(1, 1, 1, 45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="normal"></div>
+    <div class="rotated">rotated</div>
+</body>
+</html>
